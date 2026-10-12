@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弄點坊 | 手作溫情，道地港味 - 精緻港式冷凍點心</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#8B1E1E',       // 典雅港式暗紅
+                            redDark: '#671313',   // 深紅
+                            gold: '#D4AF37',      // 金色標誌
+                            goldHover: '#B89528',
+                            cream: '#FAF7F2',     // 暖沙米白背景
+                            warmGray: '#2C2A29',  // 高級深灰字體
+                            cardBg: '#FFFFFF',
+                            accent: '#C85A32'     // 焦糖橙色
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Noto Serif TC"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', 'Noto Serif TC', sans-serif;
+            background-color: #FAF7F2;
+            color: #2C2A29;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(26, 15, 13, 0.88) 0%, rgba(61, 23, 20, 0.75) 100%);
+        }
+        .gold-border-glow {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-gold selection:text-brand-redDark">
+
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-brand-cream/95 backdrop-blur-md border-b border-stone-200/60 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- 品牌標誌 Logo -->
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-full bg-brand-red flex items-center justify-center text-brand-gold font-serif text-xl font-bold border-2 border-brand-gold group-hover:scale-105 transition-transform">
+                        弄
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-2xl font-black tracking-wider text-brand-redDark">弄點坊</span>
+                        <span class="text-[10px] tracking-widest text-stone-500 uppercase font-medium">NUNG DIAN DIM SUM</span>
+                    </div>
+                </a>
+
+                <!-- 桌機版選單 Nav Links -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium text-stone-700">
+                    <a href="#home" class="hover:text-brand-red transition-colors py-1">首頁</a>
+                    <a href="#about" class="hover:text-brand-red transition-colors py-1">關於我們</a>
+                    <a href="#products" class="hover:text-brand-red transition-colors py-1">產品介紹</a>
+                    <a href="#cooperation" class="hover:text-brand-red transition-colors py-1">商業合作</a>
+                    <a href="#faq" class="hover:text-brand-red transition-colors py-1">常見問題</a>
+                </nav>
+
+                <!-- 導覽列 CTA 按鈕 -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="https://line.me" target="_blank" class="inline-flex items-center space-x-2 bg-[#06C755] hover:bg-[#05b34c] text-white px-5 py-2.5 rounded-full font-medium text-sm transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-line text-lg"></i>
+                        <span>LINE 官方預購</span>
+                    </a>
+                </div>
+
+                <!-- 行動裝置 Hamburger 按鈕 -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-stone-700 hover:text-brand-red focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 行動裝置選單 Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-cream border-b border-stone-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="mobile-link block px-3 py-2 rounded-md font-medium text-stone-800 hover:bg-stone-200/50">首頁</a>
+            <a href="#about" class="mobile-link block px-3 py-2 rounded-md font-medium text-stone-800 hover:bg-stone-200/50">關於我們</a>
+            <a href="#products" class="mobile-link block px-3 py-2 rounded-md font-medium text-stone-800 hover:bg-stone-200/50">產品介紹</a>
+            <a href="#cooperation" class="mobile-link block px-3 py-2 rounded-md font-medium text-stone-800 hover:bg-stone-200/50">商業合作</a>
+            <a href="#faq" class="mobile-link block px-3 py-2 rounded-md font-medium text-stone-800 hover:bg-stone-200/50">常見問題</a>
+            <div class="pt-2">
+                <a href="https://line.me" target="_blank" class="w-full flex items-center justify-center space-x-2 bg-[#06C755] text-white px-4 py-3 rounded-xl font-medium shadow-sm">
+                    <i class="fa-brands fa-line text-xl"></i>
+                    <span>LINE 官方預購與諮詢</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="relative pt-20 min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- 背景大圖 -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=2000&q=80" 
+                 alt="蒸籠點心" 
+                 class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-24">
+            <span class="inline-block bg-brand-gold/20 border border-brand-gold/60 text-brand-gold px-4 py-1.5 rounded-full text-sm font-medium tracking-widest uppercase mb-6 backdrop-blur-sm">
+                傳承道地港味 ‧ 嚴選冷凍鎖鮮
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-tight mb-6">
+                手作溫情，道地港味<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-brand-gold to-amber-400">
+                    「弄點坊」精緻冷凍點心
+                </span>
+            </h1>
+            <p class="text-stone-300 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                不必遠赴香港茶樓，在家也能輕鬆揭開蒸籠，品嚐皮薄餡靚、熱氣騰騰的傳奇手作點心。
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#products" class="w-full sm:w-auto px-8 py-4 bg-brand-red hover:bg-brand-redDark text-white font-medium rounded-xl shadow-lg hover:shadow-xl transition-all border border-brand-gold/40 transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-utensils mr-2"></i> 瀏覽熱銷菜單
+                </a>
+                <a href="https://line.me" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-[#06C755] hover:bg-[#05b34c] text-white font-medium rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-line text-xl"></i>
+                    <span>加入 LINE 官方帳號點餐</span>
+                </a>
+            </div>
+
+            <!-- 三大亮點標籤 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 text-left">
+                <div class="bg-stone-900/60 backdrop-blur-md p-6 rounded-2xl border border-stone-700/60">
+                    <div class="w-12 h-12 bg-brand-gold/20 text-brand-gold rounded-xl flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-white mb-2">100% 嚴選優質食材</h3>
+                    <p class="text-stone-400 text-sm">採用草蝦、台灣安心豚與無添加優質麵粉，無防腐劑，食得安心。</p>
+                </div>
+                <div class="bg-stone-900/60 backdrop-blur-md p-6 rounded-2xl border border-stone-700/60">
+                    <div class="w-12 h-12 bg-brand-gold/20 text-brand-gold rounded-xl flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-white mb-2">師傅純手工包製</h3>
+                    <p class="text-stone-400 text-sm">堅持三十年港式師傅傳統捏褶手藝，保留最完美的餡肉比例與彈性。</p>
+                </div>
+                <div class="bg-stone-900/60 backdrop-blur-md p-6 rounded-2xl border border-stone-700/60">
+                    <div class="w-12 h-12 bg-brand-gold/20 text-brand-gold rounded-xl flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-white mb-2">急速急速急速急速急速急速鎖鮮</h3>
+                    <p class="text-stone-400 text-sm">採用 IQF 極速冷凍技術，免解凍直上電鍋蒸箱，10分鐘還原茶樓剛出爐美味。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-brand-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=1200&q=80" 
+                             alt="手工港式燒賣製作" 
+                             class="w-full h-[480px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-8 left-8 right-8 text-white">
+                            <span class="text-brand-gold font-serif font-semibold">弄點坊品牌精神</span>
+                            <h3 class="text-2xl font-serif font-bold mt-1">「弄」一籠熱氣蒸騰，圍繞一桌人間煙火</h3>
+                        </div>
+                    </div>
+                    <!-- 裝飾框線 -->
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-brand-red/10 rounded-3xl -z-10 hidden sm:block"></div>
+                </div>
+
+                <div>
+                    <div class="inline-flex items-center space-x-2 text-brand-red font-semibold mb-3">
+                        <span class="w-8 h-[2px] bg-brand-red"></span>
+                        <span>ABOUT NUNG DIAN</span>
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-warmGray leading-tight mb-6">
+                        用心揉捏每一顆點心，<br>傳遞無可取代的港味熱情
+                    </h2>
+                    <p class="text-stone-600 leading-relaxed mb-6">
+                        「弄點坊」創立於對正宗港式點心的執著與熱愛。「弄」字代表著手作的精細琢磨與對食材的巧思，我們希望將昔日香港一盅兩件的飲茶文化，轉化為現代家庭隨時隨地皆能享用的頂級美味。
+                    </p>
+                    <p class="text-stone-600 leading-relaxed mb-8">
+                        我們堅持不添加防腐劑與人工修飾澱粉，嚴選活蝦去殼餡料與台灣優質豬肉，經由師傅們多道工序手工捏捏包餡。經過獨家極速冷凍技術，將滿滿精華高湯與餡料口感完美鎖住。
+                    </p>
+
+                    <!-- 簡單加熱說明 -->
+                    <div class="p-6 bg-stone-100 rounded-2xl border border-stone-200">
+                        <h4 class="font-serif font-bold text-brand-redDark text-lg mb-3 flex items-center">
+                            <i class="fa-solid fa-temperature-arrow-up text-brand-gold mr-2"></i> 輕鬆 3 步驟 ‧ 10 分鐘享用美味
+                        </h4>
+                        <div class="grid grid-cols-3 gap-4 text-center text-sm">
+                            <div class="bg-white p-3 rounded-xl shadow-sm">
+                                <span class="font-bold text-brand-red block">STEP 1</span>
+                                <span class="text-stone-600 font-medium">免解凍直接取出</span>
+                            </div>
+                            <div class="bg-white p-3 rounded-xl shadow-sm">
+                                <span class="font-bold text-brand-red block">STEP 2</span>
+                                <span class="text-stone-600 font-medium">電鍋/蒸籠 10-12分鐘</span>
+                            </div>
+                            <div class="bg-white p-3 rounded-xl shadow-sm">
+                                <span class="font-bold text-brand-red block">STEP 3</span>
+                                <span class="text-stone-600 font-medium">熱氣騰騰美味開動</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-red font-semibold tracking-wider uppercase text-sm">CRAFTED DIM SUM</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-warmGray mt-2 mb-4">
+                    經典人氣點心系列
+                </h2>
+                <p class="text-stone-500 text-base">
+                    嚴選招牌港式美味，每一顆都飽滿札實。全系列採冷凍密封包裝，輕鬆料理隨時享用。
+                </p>
+            </div>
+
+            <!-- 產品卡片 Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- 產品 1: 魚子鮮燒賣 -->
+                <div class="bg-brand-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 flex flex-col group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=800&q=80" 
+                             alt="魚子鮮燒賣" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-full">
+                            熱銷第一名
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif font-bold text-xl text-stone-900">魚子鮮燒賣</h3>
+                                <span class="text-brand-red font-bold text-lg">NT$ 280 <span class="text-xs text-stone-400 font-normal">/12入</span></span>
+                            </div>
+                            <p class="text-stone-600 text-sm mb-4 leading-relaxed">
+                                嚴選草蝦仁與台灣黑豚後腿肉，黃金比例打出 Q 彈口感，頂層點綴頂級魚子，一口咬下鮮汁爆發。
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-stone-200/70 text-stone-700 text-xs px-2.5 py-1 rounded-md"><i class="fa-solid fa-fire mr-1"></i>電鍋蒸10-12分鐘</span>
+                                <span class="bg-stone-200/70 text-stone-700 text-xs px-2.5 py-1 rounded-md">無防腐劑</span>
+                            </div>
+                        </div>
+                        <a href="https://line.me" target="_blank" class="w-full bg-brand-warmGray hover:bg-brand-red text-white py-3 rounded-xl font-medium text-sm flex items-center justify-center space-x-2 transition-colors">
+                            <i class="fa-brands fa-line text-lg text-[#06C755]"></i>
+                            <span>LINE 訂購此商品</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 產品 2: 藜麥珍珠丸 -->
+                <div class="bg-brand-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 flex flex-col group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80" 
+                             alt="藜麥珍珠丸" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-brand-gold text-brand-redDark text-xs font-bold px-3 py-1 rounded-full">
+                            健康美味推薦
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif font-bold text-xl text-stone-900">藜麥珍珠丸</h3>
+                                <span class="text-brand-red font-bold text-lg">NT$ 260 <span class="text-xs text-stone-400 font-normal">/10入</span></span>
+                            </div>
+                            <p class="text-stone-600 text-sm mb-4 leading-relaxed">
+                                上等糯米混合養生紅藜麥，包裹著鮮美豬肉餡與荸薺，口感豐富綿密，清香不油膩。
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-stone-200/70 text-stone-700 text-xs px-2.5 py-1 rounded-md"><i class="fa-solid fa-fire mr-1"></i>蒸籠蒸12-15分鐘</span>
+                                <span class="bg-stone-200/70 text-stone-700 text-xs px-2.5 py-1 rounded-md">養生紅藜</span>
+                            </div>
+                        </div>
+                        <a href="https://line.me" target="_blank" class="w-full bg-brand-warmGray hover:bg-brand-red text-white py-3 rounded-xl font-medium text-sm flex items-center justify-center space-x-2 transition-colors">
+                            <i class="fa-brands fa-line text-lg text-[#06C755]"></i>
+                            <span>LINE 訂購此商品</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 產品 3: 韭菜鮮蝦餅 -->
+                <div class="bg-brand-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 flex flex-col group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80" 
+                             alt="韭菜鮮蝦餅" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif font-bold text-xl text-stone-900">韭菜鮮蝦餅</h3>
+                                <span class="text-brand-red font-bold text-lg">NT$ 320 <span class="text-xs text-stone-400 font-normal">/8入</span></span>
+                            </div>
+                            <p class="text-stone-600 text-sm mb-4 leading-relaxed">
+                                新鮮高山韭菜搭配厚實鮮蝦，外皮煎至金黃酥脆，內餡飽滿滿是海味香氣，平底鍋/氣炸鍋皆宜。
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-stone-200/70 text-stone-700 text-xs px-2.5 py-1 rounded-md"><i class="fa-solid fa-wind mr-1"></i>氣炸鍋180度8分鐘</span>
+                                <span class="bg-stone-200/70 text-stone-700 text-xs px-2.5 py-1 rounded-md">平底鍋煎香</span>
+                            </div>
+                        </div>
+                        <a href="https://line.me" target="_blank" class="w-full bg-brand-warmGray hover:bg-brand-red text-white py-3 rounded-xl font-medium text-sm flex items-center justify-center space-x-2 transition-colors">
+                            <i class="fa-brands fa-line text-lg text-[#06C755]"></i>
+                            <span>LINE 訂購此商品</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 產品 4: 黃金流沙包 -->
+                <div class="bg-brand-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 flex flex-col group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=800&q=80" 
+                             alt="黃金流沙包" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            甜點必點
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif font-bold text-xl text-stone-900">黃金流沙包</h3>
+                                <span class="text-brand-red font-bold text-lg">NT$ 220 <span class="text-xs text-stone-400 font-normal">/6入</span></span>
+                            </div>
+                            <p class="text-stone-600 text-sm mb-4 leading-relaxed">
+                                特調紅泥鹹鴨蛋黃與香濃奶油，老麵麵皮Q彈綿密，趁熱咬下享受香濃金黃奶黃流沙體驗。
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-stone-200/70 text-stone-700 text-xs px-2.5 py-1 rounded-md"><i class="fa-solid fa-fire mr-1"></i>電鍋蒸8分鐘</span>
+                                <span class="bg-stone-200/70 text-stone-700 text-xs px-2.5 py-1 rounded-md">濃郁鹹蛋黃</span>
+                            </div>
+                        </div>
+                        <a href="https://line.me" target="_blank" class="w-full bg-brand-warmGray hover:bg-brand-red text-white py-3 rounded-xl font-medium text-sm flex items-center justify-center space-x-2 transition-colors">
+                            <i class="fa-brands fa-line text-lg text-[#06C755]"></i>
+                            <span>LINE 訂購此商品</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 產品 5: 錦繡魚翅餃 -->
+                <div class="bg-brand-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 flex flex-col group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=800&q=80" 
+                             alt="錦繡魚翅餃" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif font-bold text-xl text-stone-900">錦繡魚翅餃</h3>
+                                <span class="text-brand-red font-bold text-lg">NT$ 260 <span class="text-xs text-stone-400 font-normal">/12入</span></span>
+                            </div>
+                            <p class="text-stone-600 text-sm mb-4 leading-relaxed">
+                                經典港式蒸餃，內餡包覆精選豬肉、蝦仁、木耳與胡蘿蔔絲，口感層次分明，鮮美多汁。
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-stone-200/70 text-stone-700 text-xs px-2.5 py-1 rounded-md"><i class="fa-solid fa-fire mr-1"></i>電鍋蒸10分鐘</span>
+                                <span class="bg-stone-200/70 text-stone-700 text-xs px-2.5 py-1 rounded-md">傳統捏褶</span>
+                            </div>
+                        </div>
+                        <a href="https://line.me" target="_blank" class="w-full bg-brand-warmGray hover:bg-brand-red text-white py-3 rounded-xl font-medium text-sm flex items-center justify-center space-x-2 transition-colors">
+                            <i class="fa-brands fa-line text-lg text-[#06C755]"></i>
+                            <span>LINE 訂購此商品</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 產品 6: 北菇蒸滑雞 -->
+                <div class="bg-brand-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 flex flex-col group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80" 
+                             alt="北菇蒸滑雞" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif font-bold text-xl text-stone-900">北菇蒸滑雞</h3>
+                                <span class="text-brand-red font-bold text-lg">NT$ 290 <span class="text-xs text-stone-400 font-normal">/單份包裝</span></span>
+                            </div>
+                            <p class="text-stone-600 text-sm mb-4 leading-relaxed">
+                                特選去骨雞腿肉，加入香氣濃郁的北菇與古法醬汁醃漬，蒸熟後肉質極致滑嫩，鹹香下飯。
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-stone-200/70 text-stone-700 text-xs px-2.5 py-1 rounded-md"><i class="fa-solid fa-fire mr-1"></i>電鍋蒸15分鐘</span>
+                                <span class="bg-stone-200/70 text-stone-700 text-xs px-2.5 py-1 rounded-md">滑嫩腿肉</span>
+                            </div>
+                        </div>
+                        <a href="https://line.me" target="_blank" class="w-full bg-brand-warmGray hover:bg-brand-red text-white py-3 rounded-xl font-medium text-sm flex items-center justify-center space-x-2 transition-colors">
+                            <i class="fa-brands fa-line text-lg text-[#06C755]"></i>
+                            <span>LINE 訂購此商品</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="cooperation" class="py-24 bg-brand-cream border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- 合作說明 -->
+                <div class="lg:col-span-5">
+                    <span class="text-brand-red font-semibold uppercase text-sm tracking-wider">BUSINESS COOPERATION</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-warmGray mt-2 mb-6">
+                        商業合作 ‧ 批發採購
+                    </h2>
+                    <p class="text-stone-600 leading-relaxed mb-8">
+                        「弄點坊」提供多元商業合作方案，無論您是尋找優質冷凍點心的餐廳、咖啡廳、社團團購主，或是企業年節禮盒採購，我們皆能為您提供穩定高品質的產品與量身打造的服務。
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-lg text-stone-900">團購主 / 社區團媽合作</h4>
+                                <p class="text-stone-500 text-sm">提供專屬團購優惠價與精美宣傳圖文素材，輕鬆開團。</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-store"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-lg text-stone-900">餐飲通路 / 餐廳供貨</h4>
+                                <p class="text-stone-500 text-sm">為咖啡廳、居酒屋、早午餐店提供規格化冷凍點心批發與試吃。</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-gift"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-lg text-stone-900">企業禮盒 / 節慶採購</h4>
+                                <p class="text-stone-500 text-sm">客製化三節伴手禮盒組合，提供企業專屬大宗採購優惠。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 洽談表單 -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-lg border border-stone-200">
+                        <h3 class="font-serif text-2xl font-bold text-stone-900 mb-2">合作諮詢表單</h3>
+                        <p class="text-stone-500 text-sm mb-6">請填寫下方資訊，我們的專員將於 24 小時之內主動與您聯繫。</p>
+
+                        <form id="coop-form" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-stone-700 mb-1">您的姓名 *</label>
+                                    <input type="text" required placeholder="例如：陳大明" 
+                                           class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-brand-red focus:border-brand-red transition-all outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-stone-700 mb-1">公司/單位名稱</label>
+                                    <input type="text" placeholder="例如：弄點工作室" 
+                                           class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-brand-red focus:border-brand-red transition-all outline-none">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-stone-700 mb-1">聯絡電話 *</label>
+                                    <input type="tel" required placeholder="0912-345-678" 
+                                           class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-brand-red focus:border-brand-red transition-all outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-stone-700 mb-1">Email 信箱 *</label>
+                                    <input type="email" required placeholder="service@example.com" 
+                                           class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-brand-red focus:border-brand-red transition-all outline-none">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-1">合作類型 *</label>
+                                <select required class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-brand-red focus:border-brand-red transition-all outline-none bg-white">
+                                    <option value="">請選擇合作模式</option>
+                                    <option value="group">團購主 / 開團合作</option>
+                                    <option value="wholesale">餐廳 / 通路批發供貨</option>
+                                    <option value="gift">企業禮盒大宗採購</option>
+                                    <option value="other">其他品牌聯名/合作</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-1">需求細節與備註</label>
+                                <textarea rows="4" placeholder="請簡述您的需求，如：預計採購數量、預計合作時間..." 
+                                          class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-brand-red focus:border-brand-red transition-all outline-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-brand-red hover:bg-brand-redDark text-white py-4 rounded-xl font-bold transition-colors shadow-md flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>送出合作諮詢</span>
+                            </button>
+                        </form>
+
+                        <!-- 表單成功提示訊息 -->
+                        <div id="form-success" class="hidden mt-4 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-center">
+                            <i class="fa-solid fa-circle-check text-2xl text-emerald-600 mb-1 block"></i>
+                            <p class="font-bold">諮詢表單已成功送出！</p>
+                            <p class="text-xs text-emerald-600 mt-1">我們已收到您的資訊，專員將盡快與您聯繫。</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-3xl font-bold text-brand-warmGray">常見問題解答 FAQ</h2>
+                <p class="text-stone-500 text-sm mt-2">關於訂購、加熱與保存的解答都在這裡</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-stone-200 rounded-2xl overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-4 bg-brand-cream font-serif font-bold text-stone-800 flex justify-between items-center">
+                        <span>Q1. 產品該如何保存？保存期限有多長？</span>
+                        <i class="fa-solid fa-chevron-down text-stone-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 py-4 text-stone-600 text-sm leading-relaxed border-t border-stone-200">
+                        「弄點坊」全系列點心皆採無防腐劑極速冷凍技術。請保存於 -18°C 以下冷凍庫，最佳賞味期限為製造日起 60 天內，開封後請儘速食用完畢。
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-stone-200 rounded-2xl overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-4 bg-brand-cream font-serif font-bold text-stone-800 flex justify-between items-center">
+                        <span>Q2. 下單後需要多久時間可以收到點心？</span>
+                        <i class="fa-solid fa-chevron-down text-stone-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 py-4 text-stone-600 text-sm leading-relaxed border-t border-stone-200">
+                        為確保新鮮品質，產品皆為接單後排單手工包製。下單確認後約 3-5 個工作天內出貨，全程採用黑貓宅急便冷凍配送。
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-stone-200 rounded-2xl overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-4 bg-brand-cream font-serif font-bold text-stone-800 flex justify-between items-center">
+                        <span>Q3. 烹調時需要先退冰解凍嗎？</span>
+                        <i class="fa-solid fa-chevron-down text-stone-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 py-4 text-stone-600 text-sm leading-relaxed border-t border-stone-200">
+                        不需要！產品免解凍即可直接烹調。電鍋外鍋加入 1 至 1.5 杯水，等蒸氣冒出後放入蒸籠/蒸盤，加熱 10-12 分鐘即可享受最美味的口感。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-brand-warmGray text-white pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-stone-700">
+                
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-red flex items-center justify-center text-brand-gold font-serif text-xl font-bold border border-brand-gold">
+                            弄
+                        </div>
+                        <span class="font-serif text-2xl font-bold tracking-wider text-white">弄點坊 Nung Dian</span>
+                    </div>
+                    <p class="text-stone-400 text-sm max-w-sm mb-6">
+                        經典港式手工點心品牌。堅持嚴選食材、職人接單手工現做，讓您在家也能重現茶樓般的人間煙火美味。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com" target="_blank" class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-300 hover:text-brand-gold hover:bg-stone-700 transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-300 hover:text-brand-gold hover:bg-stone-700 transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://line.me" target="_blank" class="w-10 h-10 rounded-full bg-[#06C755] flex items-center justify-center text-white hover:opacity-90 transition-opacity">
+                            <i class="fa-brands fa-line text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-white mb-4">快速連結</h4>
+                    <ul class="space-y-2 text-stone-400 text-sm">
+                        <li><a href="#home" class="hover:text-brand-gold transition-colors">首頁</a></li>
+                        <li><a href="#about" class="hover:text-brand-gold transition-colors">品牌理念</a></li>
+                        <li><a href="#products" class="hover:text-brand-gold transition-colors">產品介紹</a></li>
+                        <li><a href="#cooperation" class="hover:text-brand-gold transition-colors">商業合作</a></li>
+                        <li><a href="#faq" class="hover:text-brand-gold transition-colors">常見問題</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-white mb-4">聯絡我們</h4>
+                    <ul class="space-y-3 text-stone-400 text-sm">
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-clock mt-1 text-brand-gold"></i>
+                            <span>客服時間：週一至週五 09:00 - 18:00</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-envelope mt-1 text-brand-gold"></i>
+                            <span>service@nungdian.com</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-brands fa-line mt-1 text-[#06C755]"></i>
+                            <span>LINE 官方帳號：@nungdian</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 text-center text-stone-500 text-xs">
+                <p>&copy; <span id="year"></span> 弄點坊 Nung Dian Dim Sum. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://line.me" target="_blank" 
+       class="fixed bottom-6 right-6 z-50 bg-[#06C755] hover:bg-[#05b34c] text-white p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl flex items-center space-x-2 transition-all transform hover:scale-105 active:scale-95 group border-2 border-white/20">
+        <i class="fa-brands fa-line text-2xl"></i>
+        <span class="hidden sm:inline font-bold text-sm">LINE 專人訂購</span>
+    </a>
+
+    <script>
+        // 自動更新 Footer 年份
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 手機版漢堡選單切換控制
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // FAQ 折疊收合手風琴效果 (Accordion)
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // 商業合作表單模擬提交效果
+        const coopForm = document.getElementById('coop-form');
+        const formSuccess = document.getElementById('form-success');
+
+        coopForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // 模擬 POST Request 送出資料
+            coopForm.classList.add('opacity-50', 'pointer-events-none');
+            setTimeout(() => {
+                coopForm.reset();
+                coopForm.classList.remove('opacity-50', 'pointer-events-none');
+                formSuccess.classList.remove('hidden');
+                setTimeout(() => {
+                    formSuccess.classList.add('hidden');
+                }, 6000);
+            }, 800);
+        });
+    </script>
+</body>
+</html>
